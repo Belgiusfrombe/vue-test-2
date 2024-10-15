@@ -7,4 +7,7 @@ export const postsStore = reactive({
     { id: 2, title: 'Post 2', content: 'Content of Post 2' },
     { id: 3, title: 'Post 3', content: 'Content of Post 3' },
   ],
+  deleteOneById(id) {
+    this.posts.splice(this.posts.findIndex(post => post.id === id), 1);
+  },
 });

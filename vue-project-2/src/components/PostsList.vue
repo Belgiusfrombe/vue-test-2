@@ -1,5 +1,4 @@
 <script setup>
-// On aura besoin d'un component Post
 import PostsListItem from "./PostsListItem.vue";
 defineProps(["posts"]);
 // const emitDeleteOne = (id) => {

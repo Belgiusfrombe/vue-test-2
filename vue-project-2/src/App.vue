@@ -15,6 +15,7 @@ const test = (message) => {
   alert(message);
 };
 
+
 const updatePrenom = (newPrenom) => {
   prenom.value = newPrenom;
 };

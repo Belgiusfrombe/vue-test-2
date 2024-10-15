@@ -1,5 +1,6 @@
 <script setup>
 defineProps(["post"]);
+import { postsStore } from "@/stores/postsStore";
 // faites en sorte que quand on clique sur le bouton 'delete'
 // on demande au parent de supprimer ce post:
 // 1. On émet un event 'delete' en envoyant l'id du post
@@ -22,7 +23,6 @@ defineProps(["post"]);
   <li>
     {{ post.title }}
     <input type="text" v-model="post.title" />
-    <button @click.prevent="$emit('delete')">DELETE</button>
-    <!-- <button @click.prevent="emitDelete">DELETE</button> -->
+    <button @click.prevent="postsStore.deleteOneById(post.id)">DELETE</button>
   </li>
 </template>
