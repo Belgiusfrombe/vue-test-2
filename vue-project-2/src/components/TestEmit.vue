@@ -1,17 +1,16 @@
 <script setup>
 import { ref } from "vue";
 const props = defineProps(["prenom"]);
+const events = defineEmits(["onSoydan", "prenomChanged"]);
 const prenom = ref(props.prenom);
-const emits = defineEmits(["onSoydan", "prenomChanged"]);
 
 const emitSoydan = (message) => {
-  emits("onSoydan", message);
+  events("onSoydan", message);
 };
 
 const emitPrenomChanged = (newPrenom) => {
-  emits("prenomChanged", newPrenom);
+  events("prenomChanged", newPrenom);
 };
-
 </script>
 
 <template>

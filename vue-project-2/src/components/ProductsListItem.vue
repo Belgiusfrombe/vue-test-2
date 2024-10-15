@@ -9,9 +9,4 @@ const props = defineProps(["product"]);
   </li>
 </template>
 
-<style scoped>
-li {
-  color: orange;
-  list-style-type: none;
-}
-</style>
+<style scoped></style>

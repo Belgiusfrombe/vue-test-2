@@ -35,6 +35,14 @@ const test = (message) => {
 const updatePrenom = (newPrenom) => {
   prenom.value = newPrenom;
 };
+
+const deleteOneById = (id) => {
+  posts.splice(
+    posts.findIndex((post) => post.id === id),
+    1
+  );
+};
+
 </script>
 
 <template>
@@ -46,7 +54,7 @@ const updatePrenom = (newPrenom) => {
     ul>li>Title
     Components: PostsList et Post
    -->
-  <PostsList :posts="posts" />
+  <PostsList :posts="posts" @deleteOne="deleteOneById" />
 
   <Test>
     <template v-slot:header>
