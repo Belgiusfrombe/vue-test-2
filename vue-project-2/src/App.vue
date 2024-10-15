@@ -72,6 +72,9 @@ const deleteOneById = (id) => {
 
   <div>{{ prenom }}</div>
   <TestEmit :prenom="prenom" @on-soydan="test" @prenom-changed="updatePrenom" />
+
+  <componentA />
+  <componentB />
 </template>
 
 <style scoped></style>

@@ -10,7 +10,7 @@ const emitDeleteOne = (id) => {
 </script>
 
 <template>
-  <h1>Liste des posts</h1>
+  <h1>Liste des posts </h1>
   <ul>
     <PostsListItem
       v-for="post in posts"
