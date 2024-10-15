@@ -4,7 +4,7 @@ import ProductsList from "./components/ProductsList.vue";
 import PostsList from "./components/PostsList.vue";
 import Test from "./components/Test.vue";
 import TestEmit from "./components/TestEmit.vue";
-import { reactive, computed } from "vue";
+import { ref, reactive, computed } from "vue";
 
 // Créez une liste de 3 produits (id, name et price)
 const products = reactive([
@@ -25,6 +25,8 @@ const posts = reactive([
   { id: 3, title: "Post 3", content: "Content 3" },
 ]);
 
+const prenom = ref("Alexandre");
+
 // Créez une computed avec les produits dans l'ordre aphabétique
 const sortedProducts = computed(() => {
   return products.sort((a, b) => {
@@ -38,6 +40,10 @@ const sortedPosts = computed(() => {
   });
 });
 
+const test = (message) => {
+  alert(message);
+};
+
 </script>
 
 <template>
@@ -45,7 +51,7 @@ const sortedPosts = computed(() => {
   <PostsList :posts="sortedPosts" />
   <ProductsList :products="products2" />
   <Test>Salut ça va</Test>
-  <TestEmit />
+  <TestEmit :prenom="prenom" @emitEvent="test" />
 </template>
 
 <style scoped>
