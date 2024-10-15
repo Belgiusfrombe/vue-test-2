@@ -22,7 +22,7 @@ defineProps(["post"]);
   <li>
     {{ post.title }}
     <input type="text" v-model="post.title" />
-    <button @click.prevent="$emit('delete', post.id)">DELETE</button>
+    <button @click.prevent="$emit('delete')">DELETE</button>
     <!-- <button @click.prevent="emitDelete">DELETE</button> -->
   </li>
 </template>
