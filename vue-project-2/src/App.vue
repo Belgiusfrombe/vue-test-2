@@ -44,6 +44,12 @@ const test = (message) => {
   alert(message);
 };
 
+const updatePrenom = (newPrenom) => {
+  prenom.value = newPrenom;
+};
+
+
+
 </script>
 
 <template>
@@ -51,7 +57,9 @@ const test = (message) => {
   <PostsList :posts="sortedPosts" />
   <ProductsList :products="products2" />
   <Test>Salut ça va</Test>
-  <TestEmit :prenom="prenom" @emitEvent="test" />
+
+  <div>{{ prenom }}</div>
+  <TestEmit :prenom="prenom" @prenomChanged="updatePrenom" />
 </template>
 
 <style scoped>
